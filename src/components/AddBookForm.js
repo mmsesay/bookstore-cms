@@ -4,9 +4,16 @@ export const AddBookForm = () => (
     <form onSubmit="#">
       <input 
         type="text"
+        placeholder="Author title" 
+        value=""
+        name="author"
+      />
+      <br/>
+      <input 
+        type="text"
         placeholder="Book title" 
         value=""
-        name="book-title"
+        name="title"
       />
       <button >Submit</button>
     </form>

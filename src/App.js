@@ -3,7 +3,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import { Navlinks, Books, Categories } from './components';
+import { Navlinks, BookList, Categories } from './components';
 import { data } from './utils/sample_data';
 
 function App() {
@@ -14,22 +14,22 @@ function App() {
           href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
           rel="stylesheet"/>
       </head>
-    <main>
-      <Router>
-        <div>
-          <Navlinks />
-          <br />
-          <Switch>
-            <Route path="/categories">
-              <Categories />
-            </Route>
-            <Route path="/">
-              <Books booksArray={data} />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </main>
+      <main>
+        <Router>
+          <div>
+            <Navlinks />
+            <br />
+            <Switch>
+              <Route path="/categories">
+                <Categories />
+              </Route>
+              <Route path="/">
+                <BookList booksArray={data} />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </main>
     </div>
   );
 }

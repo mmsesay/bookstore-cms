@@ -1,9 +1,9 @@
 import { Navlinks } from './Navlinks';
-import { Books } from './Books';
+import { BookList } from './BookList';
 import { Categories } from './Categories';
 
 export {
   Navlinks,
-  Books,
+  BookList,
   Categories,
 };

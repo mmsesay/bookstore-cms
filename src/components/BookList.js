@@ -1,7 +1,12 @@
-export const BookList = (book) => (
-  <li key={book.index}>
-    <p>{book.title}</p>
-    <p>{book.author}</p>
-    <button type="button">Remove</button>
-  </li>
+import { AddBookForm } from './AddBookForm';
+import { Book } from './Book';
+
+export const BookList = (prop) => ( 
+  <div>
+    <ul>
+      {prop.booksArray.map((data) => <Book key={data.index} book={data}/>)}
+    </ul>
+    <br />
+    <AddBookForm />
+  </div>
 );
