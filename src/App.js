@@ -3,17 +3,19 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Navlinks, BookList, Categories } from './components';
-import { data } from './utils/sample_data';
 
-function App() {
+const App = () => {
+  const data = useSelector((state) => state.booksReducer);
+
   return (
-    <div className="App">
-      <head>
+    <>
+      <div>
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
           rel="stylesheet"/>
-      </head>
+      </div>
       <main>
         <Router>
           <div>
@@ -30,8 +32,8 @@ function App() {
           </div>
         </Router>
       </main>
-    </div>
+    </>
   );
-}
+};
 
 export default App;
