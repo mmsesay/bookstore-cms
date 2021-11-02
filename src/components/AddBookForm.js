@@ -17,6 +17,8 @@ export const AddBookForm = () => {
     };
 
     dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
   };
 
   return (
