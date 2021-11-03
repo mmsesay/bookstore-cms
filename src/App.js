@@ -4,17 +4,23 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // import axios from 'axios';
 // import { baseUrl, appId } from './redux/api';
 import { Navlinks, BookList, Categories } from './components';
-// import { getBooks } from './redux/books/books';
+import { getBooks } from './redux/books/books';
+import { getBooksFromApi } from './redux/api';
 
 const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const booksDataFromStore = useSelector((state) => state.booksReducer);
 
-  useEffect(() => { }, []);
+  useEffect(() => { 
+    getBooksFromApi().then((data) => {
+      console.log(data);
+      dispatch(getBooks(data));
+    });
+  }, []);
 
   return (
     <>
@@ -33,7 +39,7 @@ const App = () => {
                 <Categories />
               </Route>
               <Route path="/">
-                <BookList booksArray={booksDataFromStore} />
+                <BookList data={booksDataFromStore} />
               </Route>
             </Switch>
           </div>

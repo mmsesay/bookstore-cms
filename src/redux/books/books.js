@@ -3,7 +3,9 @@ const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const GET_BOOKS = 'bookStore/books/GET_BOOKS';
 
 // init state
-const initialState = [];
+const initialState = {
+  booksArray: [],
+};
 
 // Actions
 export const addBook = (payload) => ({
@@ -25,19 +27,19 @@ export const getBooks = (payload) => ({
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [ 
+      return { 
         ...state, 
-        action.payload,
-      ];
+        booksArray: [...state.booksArray.concat(action.payload)],
+      };
 
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload.id);
 
     case GET_BOOKS:
-      return [ 
+      return {
         ...state, 
-        action.payload,
-      ];
+        booksArray: [...state.booksArray.concat(action.payload)],
+      };
 
     default:
       return state;
