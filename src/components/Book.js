@@ -1,10 +1,11 @@
+/* eslint-disable camelcase */
 // import { useDispatch } from 'react-redux';
 // import axios from 'axios';
 // import { baseUrl, appId } from '../redux/api';
 // import { removeBook } from '../redux/books/books';
 
 export const Book = (prop) => {
-  console.log(prop);
+  const { id, title, category } = prop.book;
   // const dispatch = useDispatch();
 
   const handleRemove = (id) => {
@@ -20,26 +21,13 @@ export const Book = (prop) => {
   };
 
   return (
-    <li key={prop.book.item_id}>
-      <p>{prop.book.title}</p>
-      <p>{prop.book.category}</p>
-      <button type="button" onClick={() => handleRemove(1)}>Remove</button>
-    </li>
+    <>
+      <li key={id}>
+        <p>{title}</p>
+        <p>{category}</p>
+        <button type="button" onClick={() => handleRemove(id)}>Remove</button>
+      </li>
+      <br />
+    </>
   );
 };
-
-// return Object.entries(prop.book).map((data, index) => {
-//   const [{ title, category }] = data[1];
-
-//   return (
-//     <>
-//       {data && <li key={index}>
-//           <p>{title}</p>
-//           <p>{category}</p>
-//           <button type="button" onClick={() => handleRemove(data[0])}>Remove</button>
-//         </li>
-//       }
-//       <br />
-//     </>
-//   );
-// });

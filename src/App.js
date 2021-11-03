@@ -17,7 +17,6 @@ const App = () => {
 
   useEffect(() => { 
     getBooksFromApi().then((data) => {
-      console.log(data);
       dispatch(getBooks(data));
     });
   }, []);

@@ -8,28 +8,40 @@ import { postBookToApi } from '../redux/api';
 export const AddBookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [message, setMessage] = useState('');
   const dispatch = useDispatch();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const newBook = {
-      item_id: uuid_v4(),
-      title,
-      category: author,
-    };
+    if (title && author) {
+      const newBook = {
+        item_id: uuid_v4(),
+        title,
+        category: author,
+      };
 
-    await postBookToApi(newBook);
-    // console.log(response.data);
-    dispatch(addBook(newBook));
-    setTitle('');
-    setAuthor('');
+      await postBookToApi(newBook);
+      dispatch(addBook(newBook));
+      setTitle('');
+      setAuthor('');
+    } else {
+      setMessage('Both title and author fields are required');
+    }
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (message) {
+      setTimeout(() => {
+        setMessage('');
+      }, 4000);
+    }
+  }, [message]);
 
   return (
     <div>
       <h2>ADD NEW BOOK</h2>
+      <p>{message}</p>
+
       <form method="POST" onSubmit={handleFormSubmit}>
         <input 
           type="text"
