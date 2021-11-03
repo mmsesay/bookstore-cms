@@ -1,13 +1,33 @@
+import { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+import { baseUrl, appId } from './redux/api';
 import { Navlinks, BookList, Categories } from './components';
+import { getBooks } from './redux/books/books';
 
 const App = () => {
-  const data = useSelector((state) => state.booksReducer);
+  // const [data, setData] = useState();
+  const dispatch = useDispatch();
+  const booksDataFromStore = useSelector((state) => state.booksReducer);
+
+  const getBooksFromApi = () => {
+    dispatch(getBooks);
+    axios.get(`${baseUrl}${appId}/books`).then((response) => {
+      dispatch(getBooks(response.data));
+    });
+  };
+
+  // console.log(...booksDataFromStore);
+  // booksDataFromStore.map((data) => setData([...data]));
+
+  useEffect(() => {
+    getBooksFromApi();
+  }, []);
 
   return (
     <>
@@ -26,7 +46,7 @@ const App = () => {
                 <Categories />
               </Route>
               <Route path="/">
-                <BookList booksArray={data} />
+                <BookList booksArray={booksDataFromStore} />
               </Route>
             </Switch>
           </div>

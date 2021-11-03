@@ -35,8 +35,7 @@
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "no-trailing-spaces": "off",
-    "react/prop-types": 0,
-    "camelcase": [2, { "properties": "never" }]
+    "react/prop-types": 0
   },
   "ignorePatterns": [
     "dist/",
