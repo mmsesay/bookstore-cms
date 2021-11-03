@@ -4,30 +4,17 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
-import { baseUrl, appId } from './redux/api';
+import { useSelector } from 'react-redux';
+// import axios from 'axios';
+// import { baseUrl, appId } from './redux/api';
 import { Navlinks, BookList, Categories } from './components';
-import { getBooks } from './redux/books/books';
+// import { getBooks } from './redux/books/books';
 
 const App = () => {
-  // const [data, setData] = useState();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const booksDataFromStore = useSelector((state) => state.booksReducer);
 
-  const getBooksFromApi = () => {
-    dispatch(getBooks);
-    axios.get(`${baseUrl}${appId}/books`).then((response) => {
-      dispatch(getBooks(response.data));
-    });
-  };
-
-  // console.log(...booksDataFromStore);
-  // booksDataFromStore.map((data) => setData([...data]));
-
-  useEffect(() => {
-    getBooksFromApi();
-  }, []);
+  useEffect(() => { }, []);
 
   return (
     <>

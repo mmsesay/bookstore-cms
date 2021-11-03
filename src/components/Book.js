@@ -12,11 +12,14 @@ export const Book = (prop) => {
     const [{ title, category }] = data[1];
 
     return (
-      <li key={data[0]}>
-        <p>{title}</p>
-        <p>{category}</p>
-        <button type="button" onClick={() => handleRemove(data[0])}>Remove</button>
-      </li>
+      <>
+        <li key={data[0]}>
+          <p>{title}</p>
+          <p>{category}</p>
+          <button type="button" onClick={() => handleRemove(data[0])}>Remove</button>
+        </li>
+        <br />
+      </>
     );
   });
 };  
