@@ -2,7 +2,7 @@ export const data = [
   {
     index: 1,
     author: 'Suzanne Collins',
-    title: 'The Hunder Games',
+    title: 'The Hunger Games',
   },
   {
     index: 2,

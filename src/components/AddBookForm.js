@@ -1,22 +1,36 @@
+/* eslint-disable camelcase */
 import { useState } from 'react';
+import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { uuid } from 'uuidv4';
+import { v4 as uuid_v4 } from 'uuid';
 import { addBook } from '../redux/books/books';
+import { baseUrl, appId } from '../redux/api';
 
 export const AddBookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
 
+  const postBook = (newBook) => {
+    axios.post(`${baseUrl}${appId}/books`, newBook)
+      .then((response) => {
+        if (response.status === 201) {
+          dispatch(addBook(newBook));
+        }
+      })
+      .catch((error) => { throw new Error(error); });
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const newBook = {
-      id: uuid(),
+      item_id: uuid_v4(),
       title,
-      author,
+      category: author,
     };
 
-    dispatch(addBook(newBook));
+    // dispatch(addBook(newBook));
+    postBook(newBook);
     setTitle('');
     setAuthor('');
   };

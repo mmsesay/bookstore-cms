@@ -4,7 +4,7 @@ import { Book } from './Book';
 export const BookList = (prop) => ( 
   <div>
     <ul>
-      {prop.booksArray.map((data) => <Book key={data.id} book={data}/>)}
+      {prop.booksArray.map((data) => <Book key={data.item_id} book={data}/>)}
     </ul>
     <br />
     <AddBookForm />
