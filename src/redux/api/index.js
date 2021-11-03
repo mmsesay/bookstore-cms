@@ -27,3 +27,15 @@ export const postBookToApi = (newBook) => {
     .then((response) => console.log(response.data))
     .catch((error) => { throw new Error(error); });
 };
+
+export const deleteBookFromApi = async (id) => {
+  const response = await axios.post(`${baseUrl}${appId}/books`, { item_id: id });
+  console.log(response);
+  // .then((response) => {
+  //   console.log(response.data);
+  //   // if (response.status === 201) {
+  //   //   dispatch(removeBook({ id }));
+  //   // }
+  // })
+  // .catch((error) => { throw new Error(error); });
+};
