@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import axios from 'axios';
 
 export const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/'; 
@@ -8,11 +7,11 @@ export const getBooksFromApi = async () => {
   const finalData = [];
   const response = await axios.get(`${baseUrl}${appId}/books`);
   Object.entries(response.data).forEach((data) => {
-    const item_id = data[0];
+    const itemId = data[0];
     const [{ title, category }] = data[1];
 
     const obj = {
-      item_id,
+      item_id: itemId,
       title,
       category,
     };

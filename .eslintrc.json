@@ -36,6 +36,7 @@
     "import/no-cycle": "off",
     "no-trailing-spaces": "off",
     "react/prop-types": 0,
+    "camelcase" : "off"
   },
   "ignorePatterns": [
     "dist/",
