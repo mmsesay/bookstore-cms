@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 
 export const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/'; 
@@ -8,11 +9,11 @@ export const getBooksFromApi = async () => {
   const response = await axios.get(`${baseUrl}${appId}/books`);
   // eslint-disable-next-line array-callback-return
   Object.entries(response.data).map((data) => {
-    const id = data[0];
+    const item_id = data[0];
     const [{ title, category }] = data[1];
 
     const obj = {
-      id,
+      item_id,
       title,
       category,
     };
@@ -22,10 +23,13 @@ export const getBooksFromApi = async () => {
   return finalData;
 };
 
-export const postBookToApi = (newBook) => {
+export const postBookToApi = async (newBook) => {
+  let serverResponse;
   axios.post(`${baseUrl}${appId}/books`, newBook)
-    .then((response) => response.data)
+    .then((response) => { serverResponse = response.data; })
     .catch((error) => { throw new Error(error); });
+
+  return serverResponse;
 };
 
 export const deleteBookFromApi = (id) => {

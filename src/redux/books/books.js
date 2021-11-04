@@ -29,18 +29,17 @@ const booksReducer = (state = initialState, action) => {
     case ADD_BOOK:
       return { 
         ...state, 
-        booksArray: [...state.booksArray.concat(action.payload)],
+        booksArray: [...state.booksArray, action.payload],
       };
 
     case REMOVE_BOOK:
       return {
-        ...state,
-        booksArray: [...state.booksArray.filter((book) => book.id !== action.payload.id)],
+        booksArray: [...state.booksArray.filter((book) => book.item_id !== action.payload.item_id)],
       };
 
     case GET_BOOKS:
       return {
-        ...state, 
+        ...state,
         booksArray: [...state.booksArray.concat(action.payload)],
       };
 
