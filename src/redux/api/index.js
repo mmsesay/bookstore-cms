@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/'; 
-export const appId = 'bJTtiRJfwS5VIiVRUXvf'; // 'OqBRyKxYO89yzhxhEuf8';
+export const appId = 'bJTtiRJfwS5VIiVRUXvf';
 
 export const getBooksFromApi = async () => {
   const finalData = [];
@@ -24,18 +24,10 @@ export const getBooksFromApi = async () => {
 
 export const postBookToApi = (newBook) => {
   axios.post(`${baseUrl}${appId}/books`, newBook)
-    .then((response) => console.log(response.data))
+    .then((response) => response.data)
     .catch((error) => { throw new Error(error); });
 };
 
-export const deleteBookFromApi = async (id) => {
-  const response = await axios.post(`${baseUrl}${appId}/books`, { item_id: id });
-  console.log(response);
-  // .then((response) => {
-  //   console.log(response.data);
-  //   // if (response.status === 201) {
-  //   //   dispatch(removeBook({ id }));
-  //   // }
-  // })
-  // .catch((error) => { throw new Error(error); });
+export const deleteBookFromApi = (id) => {
+  axios.delete(`${baseUrl}${appId}/books/${id}`, { item_id: id });
 };

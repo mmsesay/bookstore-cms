@@ -24,6 +24,9 @@ export const AddBookForm = () => {
       dispatch(addBook(newBook));
       setTitle('');
       setAuthor('');
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     } else {
       setMessage('Both title and author fields are required');
     }

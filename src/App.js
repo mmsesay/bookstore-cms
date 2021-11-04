@@ -5,8 +5,6 @@ import {
   Route,
 } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// import axios from 'axios';
-// import { baseUrl, appId } from './redux/api';
 import { Navlinks, BookList, Categories } from './components';
 import { getBooks } from './redux/books/books';
 import { getBooksFromApi } from './redux/api';
