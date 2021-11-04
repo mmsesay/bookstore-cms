@@ -7,8 +7,7 @@ export const appId = 'bJTtiRJfwS5VIiVRUXvf';
 export const getBooksFromApi = async () => {
   const finalData = [];
   const response = await axios.get(`${baseUrl}${appId}/books`);
-  // eslint-disable-next-line array-callback-return
-  Object.entries(response.data).map((data) => {
+  Object.entries(response.data).forEach((data) => {
     const item_id = data[0];
     const [{ title, category }] = data[1];
 
