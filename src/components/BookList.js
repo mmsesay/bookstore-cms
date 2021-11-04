@@ -1,12 +1,17 @@
 import { AddBookForm } from './AddBookForm';
 import { Book } from './Book';
 
-export const BookList = (prop) => ( 
-  <div>
-    <ul>
-      {prop.booksArray.map((data) => <Book key={data.id} book={data}/>)}
-    </ul>
-    <br />
-    <AddBookForm />
-  </div>
-);
+export const BookList = (prop) => {
+  const { booksArray } = prop.data;
+
+  return (
+    <div>
+      <ul>
+        {booksArray && booksArray.map((data, index) => <Book key={index} book={data}/>)}
+      </ul>
+      <AddBookForm />
+      <br />
+      <br />
+    </div>
+  );
+};
