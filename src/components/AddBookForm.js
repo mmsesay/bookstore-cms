@@ -1,7 +1,6 @@
-/* eslint-disable camelcase */
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuid_v4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 import { postBookToApi } from '../redux/api';
 
@@ -15,7 +14,7 @@ export const AddBookForm = () => {
     e.preventDefault();
     if (title && author) {
       const newBook = {
-        item_id: uuid_v4(),
+        item_id: uuidv4(),
         title,
         category: author,
       };
