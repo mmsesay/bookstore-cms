@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 import { postBookToApi } from '../redux/api';
+import { generateRandomPercentage } from '../utils/generator';
 
 export const AddBookForm = () => {
   const [title, setTitle] = useState('');
@@ -13,14 +14,21 @@ export const AddBookForm = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (title && author) {
-      const newBook = {
+      const newBookToApi = {
         item_id: uuidv4(),
         title,
         category: author,
       };
 
-      await postBookToApi(newBook);
-      dispatch(addBook(newBook));
+      const newBookToStore = {
+        item_id: uuidv4(),
+        title,
+        category: author,
+        percentage: generateRandomPercentage(),
+      };
+
+      await postBookToApi(newBookToApi);
+      dispatch(addBook(newBookToStore));
       setTitle('');
       setAuthor('');
     } else {

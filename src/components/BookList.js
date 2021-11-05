@@ -7,7 +7,7 @@ export const BookList = (prop) => {
   return (
     <div>
       <ul>
-        {booksArray && booksArray.map((data, index) => <Book key={index} book={data}/>)}
+        {booksArray && booksArray.map((data, index) => <Book key={index} book={data} />)}
       </ul>
       <AddBookForm />
       <br />
