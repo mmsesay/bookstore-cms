@@ -3,7 +3,7 @@ import {
 } from 'react-router-dom';
 
 export const Navlinks = () => (
-  <nav className="panel-bg flex items-center border">
+  <nav className="panel-bg flex items-center border rounded-tl-md rounded-tr-md">
     <a className="Bookstore-CMS-Title">Bookstore CMS</a>
     <ul className="flex space-x-5 font-montserrat text-lg">
       <li>
