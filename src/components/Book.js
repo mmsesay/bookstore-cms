@@ -8,7 +8,7 @@ import { deleteBookFromApi } from '../redux/api';
 export const Book = (prop) => {
   const { 
     item_id, title, category, percentage,
-    category_section,
+    category_section, chapter,
   } = prop.book;
   const dispatch = useDispatch();
 
@@ -51,7 +51,7 @@ export const Book = (prop) => {
         <span className="border-r border-gray-200 mx-2"></span>
         <div className="w-1/4 font-crete">
           <p className="font-thin text-gray-400">CURRENT CHAPTER</p>
-          <p className="font-thiner text-gray-600">Chapter 17</p>
+          <p className="font-thiner text-gray-600">{chapter}</p>
           <button className="font-montserrat bg-blue-500 text-white p-2 rounded mt-4">
             UPDATE PROGRESS
           </button>

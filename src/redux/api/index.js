@@ -1,5 +1,8 @@
 import axios from 'axios';
-import { generateRandomPercentage, generateRandomCategory } from '../../utils/generator';
+import { 
+  generateRandomPercentage, generateRandomCategory,
+  generateRandomChapter,
+} from '../../utils/generator';
 
 export const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/'; 
 export const appId = 'bJTtiRJfwS5VIiVRUXvf';
@@ -18,6 +21,7 @@ export const getBooksFromApi = async () => {
       category,
       percentage,
       category_section: generateRandomCategory(),
+      chapter: generateRandomChapter(),
     };
 
     finalData.push(obj);
