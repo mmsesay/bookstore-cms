@@ -35,13 +35,13 @@ export const Book = (prop) => {
             <p className="text-blue-400 font-crete">Edit</p>
           </span>
         </span>
-        <span className="flex space-x-3">
+        <span className="flex space-x-3 items-center">
           <div className="w-24 h-24">
-            <CircularProgressbar value={66} />
+            <CircularProgressbar value={66} className="text-blue-400"/>
           </div>
           <div className="">
-            <p>64%</p>
-            <p>Completed</p>
+            <p className="text-3xl">64%</p>
+            <p className="font-montserrat text-lg">Completed</p>
           </div>
         </span>
         <span>
