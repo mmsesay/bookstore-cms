@@ -1,5 +1,5 @@
 export const Categories = () => (
-  <div>
-    <h1>Under construciton</h1>
+  <div className="Lesson-Panel flex space-x-10">
+    <p className="Book-Title w-full">Under Construction</p>
   </div>
 );
