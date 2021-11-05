@@ -7,6 +7,7 @@
   --white: #e8e8e8;
   --medium-blue: #307bbe;
   --dodger-blue: #379cf6;
+  --black-5: rgba(0, 0, 0, 0.05);
 }
 
 .Text-Style-5 {
@@ -18,19 +19,17 @@
 }
 
 .panel-bg {
-  width: 87.5rem;
+  width: 100%;
   height: 5.938rem;
-  margin: 0 0 2.375rem;
   padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   background-color: #fff;
 }
 
 .Bookstore-CMS {
-  width: 100rem;
-  height: 89.625rem;
-  margin: 0 auto;
-  padding: 9.313rem 3.75rem 7.688rem 6.25rem;
-  background-color: var(--pale-grey);
+  width: 100%;
+  height: auto;
+  padding: 10rem 20rem;
+  background-color: var(--pale-gray);
 }
 
 .Bookstore-CMS-Title {
@@ -77,7 +76,7 @@
 
 .Lesson-Panel {
   height: 10.625rem;
-  margin: 2.313rem 6.25rem 0;
+  margin: 0 7rem;
   padding: 1rem 3rem;
   border-radius: 4px;
   border: solid 1px var(--white);
@@ -117,6 +116,10 @@
 
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+  box-shadow: 0 0 60px 0 var(--black-5);
 }
 
 .Mask {

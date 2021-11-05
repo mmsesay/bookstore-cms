@@ -30,7 +30,6 @@ const App = () => {
         <Router>
           <div>
             <Navlinks />
-            <br />
             <Switch>
               <Route path="/categories">
                 <Categories />

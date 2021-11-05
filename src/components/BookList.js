@@ -5,13 +5,11 @@ export const BookList = (prop) => {
   const { booksArray } = prop.data;
 
   return (
-    <div>
-      <ul>
+    <div className="bg-white card">
+      <ul className="py-10">
         {booksArray && booksArray.map((data, index) => <Book key={index} book={data} />)}
       </ul>
       <AddBookForm />
-      <br />
-      <br />
     </div>
   );
 };
