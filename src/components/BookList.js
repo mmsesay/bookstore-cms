@@ -6,7 +6,7 @@ export const BookList = (prop) => {
 
   return (
     <div>
-      <ul>
+      <ul className="bg-blue-200">
         {booksArray && booksArray.map((data, index) => <Book key={index} book={data}/>)}
       </ul>
       <AddBookForm />
