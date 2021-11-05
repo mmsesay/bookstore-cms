@@ -16,10 +16,21 @@ export const Book = (prop) => {
 
   return (
     <>
-      <li key={item_id}>
-        <p>{title}</p>
-        <p>{category}</p>
-        <button type="button" onClick={(e) => handleRemove(e, item_id)}>Remove</button>
+      <li key={item_id} className="Lesson-Panel">
+        <p className="Book-Title">{title}</p>
+        <p className="Author-Name text-blue-400">{category}</p>
+        <span className="flex mt-8">
+          <p className="text-blue-400 font-crete">Comments</p>
+          <span className="border-r mx-2"></span>
+          <p
+            className="text-blue-400 font-crete"
+            type="button"
+            onClick={(e) => handleRemove(e, item_id)}>
+            Remove
+          </p>
+          <span className="border-r mx-2"></span>
+          <p className="text-blue-400 font-crete">Edit</p>
+        </span>
       </li>
       <br />
     </>
