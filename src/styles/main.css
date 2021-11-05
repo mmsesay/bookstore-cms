@@ -28,7 +28,7 @@
 .Bookstore-CMS {
   width: 100%;
   height: auto;
-  padding: 10rem 20rem;
+  padding: 10rem 15rem;
   background-color: var(--pale-gray);
 }
 
@@ -120,6 +120,10 @@
 
 .card {
   box-shadow: 0 0 60px 0 var(--black-5);
+}
+
+.blck {
+  color: #121212 !important;
 }
 
 .Mask {

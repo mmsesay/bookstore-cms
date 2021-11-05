@@ -4,10 +4,12 @@ import {
 
 export const Navlinks = () => (
   <nav className="panel-bg flex items-center border">
-    <a className="Bookstore-CMS-Title">Bookstore cms</a>
-    <ul className="flex space-x-5 font-normal font-thiner text-xl">
-      <li className="text-gray-600">
-        <Link to="/" className="">BOOKS</Link>
+    <a className="Bookstore-CMS-Title">Bookstore CMS</a>
+    <ul className="flex space-x-5 font-montserrat text-lg">
+      <li>
+        <Link to="/">
+          <span className="text-gray-900 blck">BOOKS</span>
+        </Link>
       </li>
       <li className="text-gray-400">
         <Link to="/categories">CATEGORIES</Link>
