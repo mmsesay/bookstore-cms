@@ -18,8 +18,8 @@ export const Navlinks = () => (
         </li>
       </ul>
     </div>
-    <div className="border rounded-full p-1">
-      <img src={person} alt="man-icon" className="w-10 h-10 rounded-full" />
+    <div className="border rounded-full p-4">
+      <img src={person} alt="man-icon" className="w-6 h-6 rounded" />
     </div>
   </nav>
 );
