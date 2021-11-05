@@ -8,6 +8,7 @@ import { deleteBookFromApi } from '../redux/api';
 export const Book = (prop) => {
   const { 
     item_id, title, category, percentage,
+    category_section,
   } = prop.book;
   const dispatch = useDispatch();
 
@@ -22,9 +23,10 @@ export const Book = (prop) => {
     <>
       <li key={item_id} className="Lesson-Panel flex space-x-10">
         <div className="w-4/6">
+          <p className="w-full text-xl text-gray-400 font-semibold">{category_section}</p>
           <p className="Book-Title w-full">{title}</p>
           <p className="Author-Name text-blue-400">{category}</p>
-          <div className="flex mt-8">
+          <div className="flex mt-4">
             <p className="text-blue-400 font-crete hover:text-gray-400 cursor-pointer">Comments</p>
             <span className="border-r mx-2"></span>
             <p

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 import { postBookToApi } from '../redux/api';
-import { generateRandomPercentage } from '../utils/generator';
+import { generateRandomPercentage, generateRandomCategory } from '../utils/generator';
 
 export const AddBookForm = () => {
   const [title, setTitle] = useState('');
@@ -25,6 +25,7 @@ export const AddBookForm = () => {
         title,
         category: author,
         percentage: generateRandomPercentage(),
+        category_section: generateRandomCategory(),
       };
 
       await postBookToApi(newBookToApi);
