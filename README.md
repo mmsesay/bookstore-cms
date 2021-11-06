@@ -11,7 +11,7 @@ Application Screenshot                                                          
 
 
 ## Online versions
-![Live Version](https://bookstore-cms-app.herokuapp.com/)
+[Live Version](https://bookstore-cms-app.herokuapp.com/)
 
 ## Built With
 
