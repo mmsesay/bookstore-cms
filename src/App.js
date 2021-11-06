@@ -26,11 +26,10 @@ const App = () => {
           href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css"
           rel="stylesheet"/>
       </div>
-      <main>
+      <main className="Bookstore-CMS">
         <Router>
           <div>
             <Navlinks />
-            <br />
             <Switch>
               <Route path="/categories">
                 <Categories />
