@@ -1,5 +1,5 @@
 # Book Store CMS
-Book store CMS is a react project that enable users to create and remove books. This project also leverage the use of redux.
+> Book store CMS is a react project that enables users to create and remove books. This project also leverages the use of redux.
 
 Application Demo                                                                                             |
 :---------------------------------------------------------------------------------------------------:|
